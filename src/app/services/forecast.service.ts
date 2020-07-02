@@ -15,7 +15,7 @@ export class ForecastService {
   public weatherSubjet: Subject<any> = new Subject<any>();
   public weathers: Observable<any>;
 
-  endpoint: string = 'http://api.openweathermap.org/data/2.5/forecast';
+  endpoint: string = 'https://api.openweathermap.org/data/2.5/forecast';
 
   constructor(private http: HttpClient, private geolocationService: GeolocationService) {
     this.weathers = this.weatherSubjet.asObservable().pipe(map(this.structureData));
